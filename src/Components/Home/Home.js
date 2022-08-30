@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { TechGeeks } from "../../App";
 import Blog from "../Blog/Blog";
 import "./Home.css";
 
 const Home = () => {
-  // const [blogs, setBlogs] = useState([]);
-  // useEffect(() => {
-  //   fetch("data.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setBlogs(data));
-  // }, [blogs]);
-  const [blogs] = useContext(TechGeeks);
+  const [blogs, setBlogs] = useContext(TechGeeks);
+
+  useEffect(() => {
+    fetch("data.json")
+      .then((res) => res.json())
+      .then((data) => setBlogs(data));
+  }, [setBlogs]);
 
   return (
     <div className='blogs-container'>

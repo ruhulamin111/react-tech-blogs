@@ -6,17 +6,12 @@ import Videos from './Components/Videos/Videos'
 import Login from './Components/Login/Login';
 import NotFound from './Components/NotFound/NotFound';
 import BlogDetails from './Components/BlogDetails/BlogDetails';
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 
 export const TechGeeks = createContext();
 
 function App() {
   const [blogs, setBlogs] = useState([]);
-  useEffect(() => {
-    fetch("data.json")
-      .then((res) => res.json())
-      .then((data) => setBlogs(data));
-  }, [blogs]);
 
   return (
     <div>
