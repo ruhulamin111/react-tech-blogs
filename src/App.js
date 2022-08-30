@@ -1,11 +1,18 @@
-import "./App.css";
-import Navbar from "./Components/Navbar/Navbar";
-import { createContext } from "react";
+import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Navbar from './Components/Navbar/Navbar';
 
-export const BlogContext = createContext();
 
 function App() {
-  return <Navbar />;
-}
+  return (
+    <div>
+      <Navbar></Navbar>
+      <Routes>
+        <Route></Route>
+
+      </Routes>
+    </div>
+  );
+};
 
 export default App;
