@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./BlogDetails.css";
 import { BsChevronLeft } from "react-icons/bs";
 
