@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../Assets/Image/logo.png";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -10,9 +10,10 @@ const Navbar = () => {
       color: isActive ? '#1b4388' : '',
     }
   }
+  const { pathname } = useLocation();
 
   return (
-    <nav>
+    < nav style={pathname.includes('blog') ? { display: 'none' } : { display: 'flex' }}>
       <div className='logo-container'>
         <img src={Logo} alt='' />
       </div>
@@ -21,7 +22,7 @@ const Navbar = () => {
         <NavLink style={style} className='link' to='/videos'>Videos</NavLink>
         <NavLink style={style} className='link' to='/login'>Login</NavLink>
       </div>
-    </nav >
+    </ nav>
   );
 };
 
